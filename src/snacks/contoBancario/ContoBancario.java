@@ -13,11 +13,13 @@ public class ContoBancario {
     }
 
     public void deposit(BigDecimal depositAmount) {
-        this.saldo = this.saldo.add(depositAmount);
+        if (depositAmount.compareTo(new BigDecimal(0)) == 1) {
+            this.saldo = this.saldo.add(depositAmount);
+        }
     }
 
     public void withdraw(BigDecimal withdrawAmount) {
-        if (this.saldo.subtract(withdrawAmount).compareTo(withdrawAmount) == 1) {
+        if (this.saldo.subtract(withdrawAmount).compareTo(withdrawAmount) == 1 && withdrawAmount.compareTo(new BigDecimal(0)) == 1) {
             this.saldo = this.saldo.subtract(withdrawAmount);
         }
     }

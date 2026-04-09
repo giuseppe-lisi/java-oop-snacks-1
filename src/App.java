@@ -23,6 +23,11 @@ public class App {
         // sufficienti per prelevare la cifra richiesta
         newConto.withdraw(new BigDecimal(500));
         System.out.println("Il tuo saldo attuale è: " + newConto.getSaldo() + "€");
+        
+        // non vengono effettuate operazioni con cifre negative
+        newConto.deposit(new BigDecimal(-1000));
+        newConto.withdraw(new BigDecimal(-1000));
+        System.out.println("Il tuo saldo attuale è: " + newConto.getSaldo() + "€");
 
         RegistroStudenti registro = new RegistroStudenti();
         registro.addStudent(new Studente("Giuseppe", "Lisi", 26));
