@@ -13,8 +13,14 @@ public class App {
 
         ContoBancario newConto = new ContoBancario(123456789, new BigDecimal(100.25));
         System.out.println("Il tuo saldo attuale è: " + newConto.getSaldo() + "€");
+        
         // aggiunge 100 euro al saldo
         newConto.deposit(new BigDecimal(100));
+        System.out.println("Il tuo saldo attuale è: " + newConto.getSaldo() + "€");
+
+        // non verrà prelevato nulla in quanto l'utente non ha i fondi
+        // sufficienti per prelevare la cifra richiesta
+        newConto.withdraw(new BigDecimal(500));
         System.out.println("Il tuo saldo attuale è: " + newConto.getSaldo() + "€");
     }
 }

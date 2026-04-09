@@ -17,7 +17,9 @@ public class ContoBancario {
     }
 
     public void withdraw(BigDecimal withdrawAmount) {
-
+        if (this.saldo.subtract(withdrawAmount).compareTo(withdrawAmount) == 1) {
+            this.saldo = this.saldo.subtract(withdrawAmount);
+        }
     }
 
     public BigDecimal getSaldo() {
