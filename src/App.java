@@ -2,6 +2,7 @@ import java.math.BigDecimal;
 import java.util.ListIterator;
 
 import snacks.contoBancario.ContoBancario;
+import snacks.registroStudenti.RegistroStudenti;
 import snacks.student.Studente;
 
 public class App {
@@ -22,5 +23,10 @@ public class App {
         // sufficienti per prelevare la cifra richiesta
         newConto.withdraw(new BigDecimal(500));
         System.out.println("Il tuo saldo attuale è: " + newConto.getSaldo() + "€");
+
+        RegistroStudenti registro = new RegistroStudenti();
+        registro.addStudent(new Studente("Giuseppe", "Lisi", 26));
+        registro.addStudent(new Studente("Vittoria", "Dei Maneskin", 30));
+        registro.getStudents();
     }
 }
